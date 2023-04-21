@@ -1,0 +1,20 @@
+.uk-alert {
+  font-size: .875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: $alert-padding $alert-padding-right;
+
+  > * {
+    margin: 0 2px 0 0;
+  }
+  &__icon {
+    margin-right: 1em;
+  }
+  .uk-button {
+    margin: -3px 0 -3px 1.2rem;
+    color: $color-white;
+    border-color: currentColor;
+  }
+}

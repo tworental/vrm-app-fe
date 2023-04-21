@@ -1,0 +1,192 @@
+.auth {
+  background-color: $color-white;
+  min-height: 100vh;
+
+  &.verification-phone {
+    background-color: transparent;
+    min-height: inherit;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__logo {
+    display: block;
+    text-align: center;
+
+    &,
+    &:hover {
+      text-decoration: none;
+    }
+
+    &-text {
+      font-size: 1.5rem;
+      color: $base-color-darken;
+      font-weight: 500;
+      margin: auto 0;
+    }
+
+    .logo {
+      width: 50px;
+
+      @include fromTablet {
+        margin-right: 12px;
+      }
+    }
+
+    @include fromTablet {
+      display: flex;
+      text-align: left;
+    }
+  }
+  &__title,
+  &__hint {
+    text-align: center;
+
+    @include fromTablet {
+      text-align: left;
+    }
+  }
+  &__title {
+    margin: 18px 0 0;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: $base-color-darken;
+
+    @include fromWideMobile {
+      font-size: 2rem;
+    }
+
+    @include fromTablet {
+      margin-top: 70px;
+    }
+  }
+  &__hint {
+    margin: 6px 0 0;
+    font-size: 0.75rem;
+    color: rgba($base-color-darken, 0.5);
+
+    @include fromWideMobile {
+      font-size: 0.9rem;
+    }
+    @include fromTablet {
+      margin-bottom: 70px;
+    }
+  }
+  &__label {
+    font-size: 0.75rem;
+    color: rgba($base-color-darken, 0.5);
+    padding-bottom: 4px;
+  }
+  &__form {
+    @include fromWideMobile {
+      max-width: 305px;
+      margin: 0 auto;
+    }
+
+    @include fromTablet {
+      margin: 0;
+      max-width: 365px;
+      flex: 1;
+    }
+
+    &-control {
+      margin-bottom: 20px;
+
+      &.--big-space {
+        margin-bottom: 30px;
+      }
+    }
+  }
+  &__btn {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    &-hint {
+      margin: 10px 0;
+      font-size: 0.9rem;
+      color: rgba($base-color-darken, 0.5);
+      text-align: center;
+    }
+
+    &-google {
+      background-color: $color-white;
+      border: 1px solid rgba($base-color-darken, 0.5);
+      color: rgba($base-color-darken, 0.8);
+    }
+  }
+  &__link {
+    margin-top: 4px;
+  }
+  & {
+    display: flex;
+    flex-direction: column;
+  }
+  .auth-container {
+    width: 100%;
+    flex: 1;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+
+    @include fromTablet {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .auth__figure {
+    flex: 0 0 50%;
+  }
+  .auth__main-icon {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: clamp(170px, 25%, 500px);
+    margin: 1rem auto 2rem;
+    display: block;
+
+    @include fromTablet {
+      margin: 0 0 0 5vw;
+      width: calc(40vw - 0px);
+      max-width: 100%;
+    }
+  }
+  &__bg-icon,
+  &__login-bg-desktop {
+    position: fixed;
+    pointer-events: none;
+  }
+  &__bg-icon {
+    top: 0;
+    left: 0;
+
+    @include fromWideMobile {
+      top: -80px;
+    }
+
+    path {
+      fill: $alt-color;
+      fill-opacity: 0.07;
+    }
+  }
+  &__login-bg-desktop {
+    bottom: 0;
+    right: 0;
+    width: 50%;
+
+    path {
+      fill: $alt-color;
+      fill-opacity: 0.05;
+    }
+  }
+}
+
+.auth__btn-google .google-loading {
+  svg {
+    margin-right: 0;
+  }
+}

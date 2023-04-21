@@ -1,0 +1,27 @@
+.rates-details {
+  .card {
+    border: 1px solid rgba($alt-color, 0.2);
+    background-color: $color-white;
+    padding: 20px;
+
+    &__header {
+      margin-bottom: 24px;
+    }
+
+    &__heading {
+      margin-bottom: 4px;
+    }
+
+    &__title {
+      font-weight: 700;
+      color: $base-color-darken;
+      margin: 0;
+    }
+
+    &__description {
+      color: rgba($base-color-darken, 0.7);
+      font-size: 0.875rem;
+      margin: 0;
+    }
+  }
+}

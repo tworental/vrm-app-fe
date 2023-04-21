@@ -1,0 +1,92 @@
+.p-treeselect.p-component {
+  border: 1px solid rgba($alt-color, 0.3);
+  border-radius: 0;
+  font-size: 0.75rem;
+
+  &.p-focus {
+    border: 1px solid rgba($alt-color, 0.4);
+  }
+
+  &:not(.p-disabled) {
+    border-color: rgba($alt-color, 0.3) !important;
+
+    &.p-focus,
+    &.p-focus:hover {
+      box-shadow: none;
+    }
+  }
+
+  .p-treeselect-label {
+    padding: 0.625rem 0.5rem;
+  }
+
+  .p-treeselect-trigger-icon {
+    font-size: 0.75rem;
+  }
+
+  .p-treeselect-label.p-placeholder {
+    color: $input-placeholder-color;
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
+.p-treeselect-panel.p-component {
+  background-color: $color-white;
+  border: 1px solid rgba($alt-color, 0.3) !important;
+  box-shadow: 0 5px 10px 0 rgba($base-color-darken,0.1);
+  border-radius: 0;
+  width: calc(100% + 2px);
+  left: -1px !important;
+
+  .p-tree.p-component.p-tree-selectable {
+    font-size: 0.75rem;
+    padding: 0;
+  }
+
+  .p-tree .p-tree-container .p-treenode .p-treenode-content {
+    box-shadow: none;
+    border-radius: 0;
+
+    &.p-highlight {
+      background-color: $color-white;
+    }
+    &:hover {
+      background-color: $color-white !important;
+    }
+  }
+
+  .p-tree-toggler-icon {
+    font-size: 0.75rem;
+  }
+
+  .p-tree-toggler {
+    &:focus {
+      box-shadow: none !important;
+    }
+  }
+
+  .p-checkbox .p-checkbox-box.p-highlight {
+    background-color: $primary-color !important;
+    border-color: $primary-color !important;
+  }
+  .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box:hover {
+    border-color: $primary-color !important;
+  }
+
+  .p-checkbox {
+    &,
+    .p-checkbox-box {
+      height: 16px;
+      width: 16px;
+    }
+
+    .p-checkbox-box .p-checkbox-icon {
+      font-size: 10px;
+    }
+  }
+
+  .p-treenode-label {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}

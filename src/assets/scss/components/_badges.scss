@@ -1,0 +1,25 @@
+.badge {
+  &--success {
+    background-color: $success-color;
+  }
+  &--primary {
+    background-color: $primary-color;
+  }
+  &--warn {
+    background-color: $warn-color;
+  }
+  &--light {
+    background-color: $alt-color;
+  }
+  &--transparent {
+    background-color: transparent;
+  }
+  &--outline {
+    border: 1px solid rgba($base-color, 0.5);
+    color: $base-color !important;
+
+    &:hover {
+      color: darken($base-color, 5%);
+    }
+  }
+}

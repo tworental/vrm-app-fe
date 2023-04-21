@@ -1,0 +1,21 @@
+.ripple > span {
+  position: absolute;
+  background: #000;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  animation: ripples 0.6s linear infinite;
+}
+
+@keyframes ripples {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0.5;
+  }
+  100% {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+  }
+}

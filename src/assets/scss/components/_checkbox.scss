@@ -1,0 +1,45 @@
+.uk-checkbox {
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba($base-color, 0.1), inset 0 2px 0 rgba($color-white, 0.06);
+  border: 1px solid rgba($base-color, 0.1);
+  background-image: linear-gradient(0deg, rgba($base-color, 0.001) 0%, $color-white 100%);
+
+  &:checked,
+  &:indeterminate {
+    &,
+    &:focus {
+      border-color: $primary-color;
+      background-color: $primary-color;
+    }
+  }
+
+  &:checked:disabled { @include svg-fill($internal-form-checkbox-image, "#000", $form-radio-checked-icon-color); }
+}
+
+.checkbox-label {
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+
+  .uk-checkbox {
+    margin-top: 0;
+  }
+
+  .question-tooltip {
+    margin-left: 2px;
+  }
+
+  @include fromWideMobile {
+    font-size: 0.9rem;
+
+    & .label-text.--small {
+      font-size: 0.75rem;
+    }
+  }
+
+  .label-text {
+    display: flex;
+    align-items: center;
+    padding-left: 6px;
+  }
+}

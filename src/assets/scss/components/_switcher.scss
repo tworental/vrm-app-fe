@@ -1,0 +1,60 @@
+.form-switch {
+  $self: &;
+
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 0.75rem;
+  outline: none;
+
+  &__icon {
+    position: relative;
+    display: inline-block;
+    margin-right: .5rem;
+    width: 32px;
+    height: 16px;
+    background-color: rgba($base-color, 0.18);
+    border-radius: 23px;
+    vertical-align: text-bottom;
+    transition: all 0.3s linear;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 12px;
+      height: 12px;
+      background-color: $color-white;
+      border-radius: 12px;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24);
+      transform: translate3d(2px, 2px, 0);
+      transition: all 0.2s ease-in-out;
+    }
+  }
+
+  &:active {
+    #{$self}__icon::after {
+      width: 14px;
+      transform: translate3d(2px, 2px, 0);
+    }
+    #{$self}__input:checked + #{$self}__icon::after {
+      transform: translate3d(16px, 2px, 0);
+    }
+  }
+
+  &__input {
+    display: none;
+
+    &:checked + #{$self}__icon {
+      background-color: $success-color;
+
+      &::before {
+        transform: translate3d(18px, 2px, 0) scale3d(0, 0, 0);
+      }
+      &::after {
+        transform: translate3d(18px, 2px, 0);
+      }
+    }
+  }
+}

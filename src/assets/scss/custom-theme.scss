@@ -1,0 +1,267 @@
+/* UIKIT components */
+.uk-card {
+  &.--disabled {
+    & > * {
+      mix-blend-mode: luminosity;
+    }
+  }
+}
+.card-grid-view {
+  box-shadow: none;
+  border-radius: 0;
+  border: 1px solid rgba($alt-color, 0.2);
+  background: $color-white;
+
+  &__overline {
+    color: $card-oveline-color;
+    font-size: 12px;
+    margin: 0 0 2px;
+  }
+  .uk-card-body {
+    padding: 10px;
+  }
+  .uk-card-title {
+    font-size: 14px;
+    font-weight: var(--font-weight-bolder);
+    margin: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  &__actions {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 10px;
+    right: 10px;
+  }
+  &__badges {
+    margin-top: 11px;
+
+    .uk-badge {
+      margin: 0 5px 5px 0;
+    }
+  }
+  &__btn-dropdown {
+    border: 0;
+    padding: 0;
+  }
+  &__btn {
+    margin-top: 10px;
+    width: 100%;
+  }
+  &:hover {
+    .uk-card__figure {
+      box-shadow: rgb(0 0 0 / 10%) 0 2.5em 3.125em inset;
+    }
+  }
+}
+.img-placeholder {
+  filter: grayscale(100%);
+}
+// custom picture element
+.uk-card__figure {
+  --card-grid-ratio: 53.25%;
+
+  background-color: rgba($alt-color, 0.1);
+  padding-top: var(--card-grid-ratio);
+  position: relative;
+  transition: 0.2s linear;
+
+  &.--padding-top {
+    padding-top: var(--card-grid-ratio);
+  }
+  .img,
+  img {
+    display: block;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: auto;
+  }
+  img {
+    max-width: 100%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .img-placeholder {
+    height: 60%;
+    top: 20%;
+    object-fit: contain;
+  }
+}
+
+// notification dropdown
+.notification-dropdown {
+  padding: 0;
+
+  @include fromWideMobile {
+    min-width: 420px;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid rgba($alt-color, 0.1);
+  }
+  &__title {
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: 500;
+    text-transform: capitalize;
+
+    &-wrapper {
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__content {
+    padding: 20px;
+  }
+  &__list {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+
+    .notification-dropdown__item {
+      .notification {
+        padding: 10px 20px;
+      }
+    }
+  }
+  &__item {
+    border-bottom: 1px solid rgba($alt-color, 0.1);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  &__action {
+    background-color: $primary-color;
+    padding: 2px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+
+    &,
+    &:hover,
+    &:focus {
+      color: $color-white;
+      text-decoration: none;
+    }
+
+    &:hover {
+      background-color: darken($primary-color, 4%);
+    }
+
+    &:focus {
+      background-color: darken($primary-color, 6%);
+    }
+  }
+  &__footer {
+    text-align: center;
+
+    &-link {
+      display: block;
+      background-color: rgba($alt-color, 0.1);
+      padding: 15px;
+    }
+  }
+}
+
+.notification {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+
+  &,
+  &:hover,
+  &:focus {
+    color: rgba($base-color-darken, 0.5);
+  }
+
+  &.--read {
+    background-color: rgba($primary-color, 0.07);
+  }
+
+  &__title {
+    color: $base-color-darken;
+    font-weight: 700;
+  }
+}
+
+.core-user-card {
+  &__name {
+    font-size: 1rem;
+  }
+  &__email {
+    font-size: 0.75rem;
+    margin: 0;
+  }
+}
+
+.core-nav-avatar-card {
+  min-width: 320px;
+  padding: 0;
+
+  &__header {
+    padding: 1.5rem 1.5rem 1rem;
+  }
+  &__body {
+    padding: 0;
+  }
+  &__email {
+    margin: 0;
+  }
+  & &__nav-item {
+    .core-nav-avatar-card {
+      &__link {
+        display: flex;
+        align-items: center;
+        padding: 0.75rem 1.5rem;
+        color: $base-color-darken;
+
+        &:hover {
+          background-color: $nav-menu-background-hover;
+        }
+        .label {
+          padding-left: 10px;
+          flex: 1;
+        }
+      }
+    }
+  }
+
+  .--bordered {
+    border-top: 1px solid rgba($alt-color, 0.1);
+  }
+}
+
+.animated-icon {
+  transition: transform 0.1s linear;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+
+.meta-info {
+  color: $text-muted-color;
+}
+
+.uk-text-success {
+  color: $success-color !important;
+}
+
+.uk-tooltip {
+  text-align: center;
+  z-index: 999999999999;
+  max-width: 100%;
+}
+
+.uk-nav__link {
+  outline: none;
+}

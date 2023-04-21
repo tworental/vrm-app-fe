@@ -1,0 +1,12 @@
+.no-print {
+  @media print {
+    display: none !important;
+  }
+}
+
+@media print {
+  iframe * {
+    display: none !important;
+    opacity: 0;
+  }
+}

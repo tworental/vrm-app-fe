@@ -1,0 +1,36 @@
+@mixin mediaFrom($size) {
+  @media all and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin mediaTo($size) {
+  @media all and (max-width: $size - 1px) {
+    @content;
+  }
+}
+
+@mixin fromWideMobile() {
+  @media all and (min-width: $wide-mobile-screen) {
+    @content;
+  }
+}
+
+@mixin toWideMobile() {
+  @include mediaTo($wide-mobile-screen) {
+    @content;
+  }
+}
+
+
+@mixin fromTablet() {
+  @media all and (min-width: $tablet-screen) {
+    @content;
+  }
+}
+
+@mixin toTablet() {
+  @include mediaTo($tablet-screen) {
+    @content;
+  }
+}

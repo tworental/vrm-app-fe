@@ -1,0 +1,19 @@
+$invoices-offcanvas-width: 100%;
+$invoices-offcanvas-width-lg: 780px;
+
+.invoices-drawer {
+  .uk-offcanvas-bar {
+    width: $invoices-offcanvas-width;
+    left: -$invoices-offcanvas-width;
+
+    @media all and (min-width: 960px) {
+      left: -$invoices-offcanvas-width-lg;
+    }
+  }
+
+  @include fromTablet {
+    .uk-offcanvas-bar {
+      width: $invoices-offcanvas-width-lg;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+/* MAIN page header */
+.core-layout-content-header {
+  display: flex;
+  align-items: center;
+  padding: 15px 18px;
+  min-height: 70px;
+  box-sizing: border-box;
+
+  @include fromTablet {
+    padding: 15px 30px;
+  }
+
+  // TODO: Anita check
+  &.--small {
+    padding: 15px 20px 15px 10px;
+  }
+  &__icon {
+    width: 32px;
+    height: 32px;
+    background-color: rgba($core-layout-content-header-icon-background, .05);
+    border-radius: 50%;
+    color: $color-heading;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-right: 7px;
+  }
+  &__title {
+    font-size: 1rem;
+    font-weight: var(--font-weight-bolder);
+    margin: 0;
+    color: $color-heading;
+  }
+  &__actions {
+    margin-left: auto;
+  }
+}
+
+.core-skeleton.nav-layout {
+  flex-direction: row;
+
+  @include toWideMobile {
+    position: relative;
+
+    .core-skeleton__nav {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: 2;
+      transition: transform 0.2s linear;
+    }
+
+    .navbar {
+      width: 100%;
+    }
+
+    &.--nav-closed {
+      .core-skeleton__nav {
+        transform: translateX(-100%);
+      }
+    }
+
+  }
+}

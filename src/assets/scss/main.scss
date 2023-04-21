@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+@import "~choices.js/src/styles/choices.scss";
+@import "~uikit/src/scss/variables.scss";
+@import "~uikit/src/scss/mixins.scss";
+
+@import "~uikit/src/scss/uikit.scss";
+
+@import "~primevue/resources/themes/saga-blue/theme.css";
+@import "~primevue/resources/primevue.min.css";
+@import "~primeicons/primeicons.css";
+
+@import "~dhx-suite/codebase/suite.min.css";
+
+@import "~intl-tel-input/build/css/intlTelInput.css";
+
+@import "./base";
+@import "./mixins";
+@import "./components/components";
+@import "./pages/pages";
+@import "./layouts/layouts";
+@import "./custom-theme";
+@import "./media";

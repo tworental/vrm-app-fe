@@ -1,0 +1,87 @@
+{
+  "name": "tworentals-fe-app",
+  "version": "0.0.8",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=7.0.0"
+  },
+  "dependencies": {
+    "@sentry/browser": "^6.13.3",
+    "@sentry/tracing": "^6.13.3",
+    "@stripe/stripe-js": "^1.19.1",
+    "@vee-validate/i18n": "^4.5.2",
+    "@vee-validate/rules": "^4.5.2",
+    "@vueuse/core": "^5.2.0",
+    "apexcharts": "^3.28.3",
+    "choices.js": "^9.0.1",
+    "color": "^3.2.0",
+    "compact-timezone-list": "^1.0.6",
+    "core-js": "^3.18.2",
+    "country-region-data": "^1.11.0",
+    "currency-symbol-map": "^5.0.1",
+    "dayjs": "^1.10.7",
+    "dhtmlx-scheduler": "^5.3.12",
+    "dhx-suite": "^7.2.3",
+    "file-icon-vectors": "^1.0.0",
+    "file-saver": "^2.0.5",
+    "grapesjs": "^0.17.27",
+    "intl-tel-input": "^17.0.13",
+    "logrocket": "^2.0.0",
+    "logrocket-vuex": "0.0.3",
+    "mobile-device-detect": "^0.4.3",
+    "object-to-formdata": "^4.1.0",
+    "pretty-bytes": "^5.6.0",
+    "primeicons": "^4.1.0",
+    "primevue": "^3.8.0",
+    "register-service-worker": "^1.7.2",
+    "uikit": "^3.7.5",
+    "vee-validate": "^4.0.6",
+    "vue": "^3.0.9",
+    "vue-i18n": "^9.1.9",
+    "vue-router": "^4.0.5",
+    "vue-the-mask": "^0.11.1",
+    "vue3-apexcharts": "^1.4.1",
+    "vue3-google-auth": "0.0.2",
+    "vuedraggable": "^4.0.0",
+    "vuex": "^4.0.0",
+    "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.13",
+    "@vue/cli-plugin-eslint": "~4.5.13",
+    "@vue/cli-plugin-pwa": "~4.5.13",
+    "@vue/cli-plugin-router": "~4.5.13",
+    "@vue/cli-plugin-vuex": "~4.5.13",
+    "@vue/cli-service": "~4.5.13",
+    "@vue/compiler-sfc": "^3.2.19",
+    "@vue/eslint-config-airbnb": "^5.3.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.3.1",
+    "eslint-plugin-standard": "^4.1.0",
+    "eslint-plugin-vue": "^7.19.1",
+    "husky": "^4.3.8",
+    "lint-staged": "^11.2.0",
+    "sass": "^1.42.1",
+    "sass-loader": "^10.1.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}

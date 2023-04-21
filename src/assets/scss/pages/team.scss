@@ -1,0 +1,75 @@
+$team-offcanvas-width: 100%;
+$team-offcanvas-width-lg: 670px;
+
+.team-drawer {
+  .uk-offcanvas-bar {
+    width: $team-offcanvas-width;
+    left: -$team-offcanvas-width;
+
+    @media all and (min-width: 960px) {
+      left: -$team-offcanvas-width-lg;
+    }
+  }
+
+  @include fromTablet {
+    .uk-offcanvas-bar {
+      width: $team-offcanvas-width-lg;
+    }
+  }
+}
+
+.uk-offcanvas-flip .team-drawer {
+  .uk-offcanvas-bar {
+    @media all and (min-width: 960px) {
+      right: -$team-offcanvas-width-lg;
+    }
+  }
+  &.uk-open {
+    .uk-offcanvas-bar {
+      right: 0;
+    }
+  }
+}
+
+.team-table {
+  margin-bottom: 0;
+
+  & &__heading {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: rgba($base-color-darken, 0.5);
+  }
+  & &__row {
+    font-size: 0.75rem;
+
+    .team-table {
+      &__name {
+        text-transform: uppercase;
+        color: $base-color-darken;
+      }
+      &__description {
+        width: 40%;
+        color: rgba($base-color-darken, 0.5);
+
+        &.--mobile {
+          width: 100%;
+          text-transform: none;
+        }
+      }
+    }
+  }
+  & &__cell {
+    padding-left: 1rem;
+    vertical-align: middle;
+  }
+  .--check {
+    vertical-align: initial;
+
+    @include toWideMobile {
+      padding-left: 0.5rem;
+      padding-right: 0;
+    }
+  }
+}

@@ -1,0 +1,167 @@
+.rental-table {
+  width: 100%;
+  border-top: 1px solid $table-border-color;
+  border-collapse: collapse;
+
+  &__th {
+    font-size: 12px;
+    color: rgba($base-color-darken, 0.5);
+    border-right: 1px solid $table-border-color;
+    font-weight: 500;
+    text-transform: uppercase;
+    height: 40px;
+    padding: 0 20px;
+    white-space: nowrap;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+  &__td {
+    color: $base-color-darken;
+    border-top: 1px solid $table-border-color;
+    border-right: 1px solid $table-border-color;
+    height: 36px;
+    padding: 0 20px;
+    white-space: nowrap;
+    box-sizing: border-box;
+
+    &:last-child {
+      border-right: none;
+    }
+  }
+
+  .--filled {
+    background-color: rgba($alt-color, 0.04);
+  }
+
+  .--disabled {
+    background-color: rgba($alt-color, 0.02);
+  }
+
+  &__input {
+    &,
+    * {
+      height: 100%;
+    }
+
+    &.uk-text-center {
+      .uk-input {
+        text-align: center;
+      }
+    }
+
+    .uk-input {
+      background: transparent;
+      border: none;
+      width: 100%;
+      height: 100%;
+      padding: 0 5px;
+      box-sizing: border-box;
+      outline: none;
+      text-align: right;
+    }
+    .input-error-message {
+      display: none;
+    }
+
+    &.--error {
+      border: 1px solid $error-color;
+    }
+  }
+}
+
+.rental {
+  &__switch-wrapper {
+    @include toWideMobile {
+      margin-bottom: 10px;
+
+      .card__header {
+        margin-bottom: 10px !important;
+      }
+    }
+
+    @include fromWideMobile {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+}
+
+.status-select {
+   &.ready {
+    background-color: rgba($success-color, 0.1) !important;
+    border-color: rgba($success-color, 0.1);
+  }
+  &.cleaning {
+    background-color: rgba($info-color, 0.07) !important;
+    border-color: rgba($info-color, 0.07);
+  }
+  &.dirty {
+    background-color: rgba($error-color, 0.1) !important;
+    border-color: rgba($error-color, 0.1);
+  }
+  &.repair {
+    background-color: lighten($primary-color, 36%) !important;
+    border-color: lighten($primary-color, 36%);
+  }
+}
+
+.room-type {
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  transition: background-color 0.15s linear;
+
+  &__name {
+    min-width: 190px;
+    padding-right: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include toWideMobile {
+      font-size: 0.875rem;
+    }
+  }
+
+  &__meta {
+    margin-left: auto;
+    margin-right: 10px;
+    background-color: rgba($base-color, 0.05);
+    height: 24px;
+    padding: 0 5px;
+    min-width: 24px;
+    border-radius: 24px;
+    text-align: center;
+    line-height: 24px;
+
+    @include toWideMobile {
+      font-size: 0.875rem;
+    }
+  }
+
+  &__delete {
+    border: none;
+    background: none;
+    outline: none;
+    color: $error-color;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.15s linear;
+  }
+
+  &:hover {
+    background-color: rgba($base-color-darken, 0.03);
+
+    .room-type__delete {
+      opacity: 1;
+    }
+  }
+}
+
+.rentals-layout {
+  .core-skeleton__nav {
+    overflow-y: auto;
+  }
+}

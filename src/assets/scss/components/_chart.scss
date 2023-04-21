@@ -1,0 +1,25 @@
+.tooltip-item {
+  min-width: 100px;
+  padding: 6px 15px;
+
+  &.--darken {
+    background-color: rgba($alt-color, 0.1);
+  }
+}
+
+.--line {
+  position: relative;
+  height: 10px !important;
+  width: 10px !important;
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 35%;
+    top: -4px;
+    width: 2px;
+    height: 180%;
+    background-color: currentColor;
+    transform: rotate(45deg);
+  }
+}

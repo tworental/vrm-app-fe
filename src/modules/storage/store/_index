@@ -1,0 +1,200 @@
+import {
+  getQuota,
+  getFolders,
+  createFolder,
+  updateFolder,
+  deleteFolders,
+  getFiles,
+  deleteFiles,
+  getSystemFolders,
+  getPinnedFolders,
+  createPinnedFolder,
+  deletePinnedFolder,
+} from '../services';
+
+export default {
+  namespaced: true,
+
+  state: {
+    locations: [],
+    file: null,
+    folder: null,
+    folders: [],
+    pinned: [],
+    files: [],
+    quota: null,
+    hierarchy: [],
+    uploadingFiles: [],
+    loadingProgress: 0,
+  },
+
+  actions: {
+    getQuota: ({ commit }) => getQuota()
+      .then(({ data }) => commit('SET_QUOTA', data)),
+
+    getFolders: ({ commit }, payload) => getFolders(payload)
+      .then(({ data, meta }) => {
+        commit('SET_FOLDERS', data);
+        commit('SET_HIERARCHY', meta.hierarchy);
+      }),
+
+    getLocations: ({ commit }) => getSystemFolders()
+      .then(({ data }) => commit('SET_LOCATIONS', data)),
+
+    getPinned: ({ commit }) => getPinnedFolders()
+      .then(({ data }) => commit('SET_PINNED', data)),
+
+    createPinned: ({ commit }, payload) => createPinnedFolder(payload)
+      .then(() => commit('ADD_PINNED', payload)),
+
+    deletePinned: ({ commit }, payload) => deletePinnedFolder(payload)
+      .then(() => commit('DELETE_PINNED', payload)),
+
+    createFolder: ({ commit }, payload) => createFolder(payload)
+      .then(({ data }) => commit('CREATE_FOLDER', data)),
+
+    updateFolder: ({ commit }, payload) => updateFolder(payload.id, payload.data)
+      .then(() => commit('UPDATE_FOLDER', payload)),
+
+    deleteFolders: ({ commit }, ids) => deleteFolders(ids)
+      .then(() => commit('DELETE_FOLDERS', ids)),
+
+    getFiles: ({ commit }, payload) => getFiles(payload)
+      .then(({ data }) => commit('SET_FILES', data)),
+
+    deleteFiles: ({ commit }, ids) => deleteFiles(ids)
+      .then(() => commit('DELETE_FILES', ids)),
+  },
+
+  mutations: {
+    SET_QUOTA(state, data) {
+      state.quota = data;
+    },
+
+    SET_LOCATIONS(state, data) {
+      state.locations = data;
+    },
+
+    SET_FOLDER(state, id) {
+      state.folder = state.folders.find(
+        (item) => Number(item.id) === Number(id),
+      );
+    },
+
+    SET_FOLDERS(state, data) {
+      state.folders = data;
+    },
+
+    CREATE_FOLDER(state, data) {
+      state.folders.push(data);
+    },
+
+    UPDATE_FOLDER(state, { id, data }) {
+      state.folders = state.folders.map((item) => ({
+        ...item,
+        ...(item.id === id ? data : {}),
+      }));
+    },
+
+    DELETE_FOLDERS(state, ids) {
+      state.folder = null;
+      state.folders = state.folders.filter(
+        (item) => !ids.map((id) => Number(id)).includes(Number(item.id)),
+      );
+      state.pinned = state.pinned.filter(
+        (item) => !ids.map((id) => Number(id)).includes(item.id),
+      );
+    },
+
+    SET_FILE(state, id) {
+      state.file = state.files.find(
+        (item) => Number(item.id) === Number(id),
+      );
+    },
+
+    SET_FILES(state, data) {
+      state.files = data;
+    },
+
+    DELETE_FILES(state, ids) {
+      state.file = null;
+      state.files = state.files.filter(
+        (item) => !ids.map((id) => Number(id)).includes(Number(item.id)),
+      );
+    },
+
+    SET_HIERARCHY(state, data) {
+      state.hierarchy = data;
+    },
+
+    SET_UPLOADING_FILES(state, data) {
+      state.uploadingFiles = data;
+    },
+
+    SET_LOADING_PROGRESS(state, data) {
+      state.loadingProgress = data;
+    },
+
+    SET_PINNED(state, data) {
+      state.pinned = data;
+    },
+
+    ADD_PINNED(state, id) {
+      state.pinned = [
+        ...state.pinned,
+        state.folders.find((f) => f.id === id),
+      ];
+
+      state.folders = state.folders.map((item) => ({
+        ...item,
+        ...(item.id === id ? { pinned: 1 } : {}),
+      }));
+
+      state.folder.pinned = 1;
+    },
+
+    DELETE_PINNED(state, id) {
+      state.pinned = state.pinned.filter((f) => f.id !== id);
+
+      state.folders = state.folders.map((item) => ({
+        ...item,
+        ...(item.id === id ? { pinned: 0 } : {}),
+      }));
+
+      if (state.folder) {
+        state.folder.pinned = 0;
+      }
+    },
+  },
+
+  getters: {
+    locations(state) {
+      return state.locations.map((location) => ({
+        icon: location,
+        name: `storage.shared.locations.${location}`,
+        key: location,
+        location,
+      }));
+    },
+    pinned(state) {
+      return state.pinned.map((folder) => ({
+        ...folder,
+        icon: 'folder',
+        key: folder.id,
+      }));
+    },
+    previousFolder(state) {
+      if (state.hierarchy.length > 0) {
+        // the one before the last
+        const folder = state.hierarchy[state.hierarchy.length - 2];
+
+        return {
+          id: folder?.id,
+          name: '...',
+        };
+      }
+
+      return null;
+    },
+  },
+};

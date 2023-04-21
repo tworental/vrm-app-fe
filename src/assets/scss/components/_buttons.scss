@@ -1,0 +1,150 @@
+.uk-button {
+  border-radius: 0;
+  font-size: 14px;
+  min-width: 38px;
+
+  svg:first-child {
+    margin-right: 4px;
+    margin-bottom: 2px;
+  }
+  &--has-badge {
+    position: relative;
+
+    .uk-badge {
+      position: absolute;
+      padding: 0 .5em;
+      top: 0;
+      left: 100%;
+      margin-left: -.7em;
+    }
+  }
+  &--has-icon {
+    background-color: $color-white;
+    padding: 0 6px;
+    line-height: 36px;
+    height: 40px;
+    border: 1px solid rgba($base-color, 0.2);
+
+    svg:first-child {
+      margin-right: 0;
+    }
+  }
+  &--with-icon {
+    span {
+      display: none;
+
+      @media all and (min-width: $tablet-screen) {
+        display: inline-block;
+      }
+    }
+  }
+  &-primary {
+    padding: 0 1.25rem;
+  }
+  &-primary.--outline {
+    color: $base-color-darken;
+    border: 1px solid currentColor;
+    background-color: transparent;
+  }
+  &-default.--outline {
+    color: $button-default-color;
+    border: 1px solid currentColor;
+    background-color: transparent;
+  }
+  &-success {
+    color: $color-white;
+    background-color: $success-color;
+
+    &:hover {
+      background-color: darken($success-color, 3%);
+    }
+    &:active {
+      background-color: darken($success-color, 5%);
+    }
+    &:disabled {
+      background-color: lighten($success-color, 15%);
+    }
+  }
+  &.--outline {
+    color: currentColor;
+    border: 1px solid currentColor;
+    background-color: transparent;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+  &.--icon {
+    background-color: transparent;
+
+    &:hover {
+      color: darken($base-color, 10%);
+    }
+  }
+  &-danger.--icon {
+    color: $error-color;
+
+    &:hover {
+      color: darken($error-color, 10%);
+    }
+  }
+  &.--transparent {
+    background-color: transparent;
+  }
+  &.uk-button-link {
+    text-decoration: underline;
+
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: none;
+
+      &:not(:disabled) {
+        color: $global-link-color;
+      }
+    }
+  }
+
+  &--add {
+    padding: 0 18px;
+    white-space: nowrap;
+
+    svg:first-child {
+      margin-right: 10px;
+    }
+
+    &-from-wide-mobile {
+      padding: 0 18px;
+
+      svg:first-child {
+        margin-right: 0;
+      }
+      @include fromWideMobile {
+        svg:first-child {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    &-from-tablet {
+      padding: 0 18px;
+
+      svg:first-child {
+        margin-right: 0;
+      }
+      @include fromTablet {
+        svg:first-child {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+.btn--reset {
+  background: none;
+  border: none;
+}

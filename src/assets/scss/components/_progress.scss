@@ -1,0 +1,15 @@
+
+.uk-progress {
+  margin: 1rem 0;
+  background-color: transparent;
+  border-radius: $progress-border-radius;
+
+  &::-webkit-progress-bar,
+  &::-webkit-progress-inner-element,
+  &::-webkit-progress-value {
+    border-radius: $progress-border-radius;
+  }
+  &::-webkit-progress-bar {
+    border: 1px solid rgba($alt-color, 0.15);
+  }
+}

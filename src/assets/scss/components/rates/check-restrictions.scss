@@ -1,0 +1,54 @@
+.check-restrictions {
+  .card {
+    border: 1px solid rgba($alt-color, 0.2);
+    background-color: $color-white;
+    padding: 20px;
+
+    &__header {
+      margin-bottom: 24px;
+    }
+
+    &__heading {
+      margin-bottom: 4px;
+    }
+
+    &__title {
+      font-weight: 700;
+      color: $base-color-darken;
+      margin: 0;
+    }
+
+    &__description {
+      color: rgba($base-color-darken, 0.7);
+      font-size: 0.875rem;
+      margin: 0;
+    }
+  }
+  .table {
+    font-size: 0.75rem;
+    white-space: nowrap;
+    color: rgba($base-color-darken, 0.7);
+
+    .weekday,
+    .select-all {
+      font-weight: 400;
+    }
+
+    .weekday {
+      width: 30px;
+    }
+
+    .select-all {
+      width: 90px;
+    }
+
+    .check {
+      width: 100px;
+      padding: 5px 0;
+    }
+
+    @include fromWideMobile {
+      font-size: 0.875rem;
+    }
+  }
+}

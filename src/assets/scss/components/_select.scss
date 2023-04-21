@@ -1,0 +1,35 @@
+.uk-select {
+  background-color: $input-background-color;
+  font-size: 0.75rem;
+  color: $base-color-darken;
+
+  &.--dark:not([multiple]):not([size]) {
+    @include svg-fill($dark-form-select-image, "#fff", $color-white);
+  }
+
+  &:focus {
+    background-color: rgba($alt-color, 0.16);
+  }
+
+  &.--outline {
+    border: 1px solid rgba($alt-color, 0.3);
+
+    &:not(:disabled) {
+      background-color: $color-white;
+    }
+    &:focus {
+      border-color: rgba($alt-color, 0.4);
+    }
+
+    &.--invalid {
+      &,
+      &:focus {
+        border: 1px solid $error-color;
+      }
+    }
+  }
+}
+
+.currency-select {
+  width: 130px;
+}

@@ -1,0 +1,3 @@
+<template>
+  Bank Account
+</template>

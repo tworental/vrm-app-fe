@@ -1,0 +1,23 @@
+.--to-wide-mobile {
+  @include fromWideMobile {
+    display: none !important;
+  }
+}
+
+.--from-wide-mobile {
+  @include toWideMobile {
+    display: none !important;
+  }
+}
+
+.--from-tablet {
+  @include toTablet {
+    display: none !important;
+  }
+}
+
+.--to-tablet {
+  @include fromTablet {
+    display: none !important;
+  }
+}

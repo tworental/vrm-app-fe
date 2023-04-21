@@ -1,0 +1,40 @@
+.p-slider {
+  .p-slider-range {
+    border-radius: 3px;
+    background: rgb(2,0,36) !important;
+    background: linear-gradient(90deg, lighten($primary-color, 15%) 0%, darken($primary-color, 8%) 100%) !important;
+  }
+
+  &.p-slider-horizontal.p-component {
+    height: 0.5rem;
+  }
+
+  .p-slider-handle {
+    position: relative;
+    border-color: $primary-color !important;
+    z-index: 2;
+
+    &::before {
+      position: absolute;
+      left: 50%;
+      bottom: 100%;
+      content: attr(aria-valuenow);
+      display: block;
+      background-color: $primary-color;
+      color: $color-white;
+      text-align: center;
+      border-radius: 6px;
+      margin-bottom: 4px;
+      min-width: 48px;
+      transform: translateX(-50%);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem lighten($primary-color, 10%) !important;
+    }
+
+    &:hover {
+      background-color: darken($primary-color, 4%) !important;
+    }
+  }
+}

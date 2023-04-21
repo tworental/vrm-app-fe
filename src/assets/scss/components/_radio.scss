@@ -1,0 +1,15 @@
+.uk-radio {
+  box-shadow: 0 1px 1px rgba($base-color, 0.1), inset 0 2px 0 rgba($color-white, 0.06);
+  border: 1px solid rgba($base-color, 0.1);
+  margin: 0;
+
+  &:checked {
+    &,
+    &:focus {
+      border-color: $primary-color;
+      background-color: $primary-color;
+    }
+  }
+
+  &:checked:disabled { @include svg-fill($internal-form-radio-image, "#000", $form-radio-checked-icon-color); }
+}

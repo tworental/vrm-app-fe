@@ -1,0 +1,31 @@
+// Card List Layout - to auto align card list to width of the screen
+.card-list {
+  --card-list-min-width: 218px;
+  --card-list-max-width: 1fr;
+  --card-list-padding-bottom: 50px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--card-list-min-width), var(--card-list-max-width)));
+  grid-auto-flow: row dense;
+  grid-gap: 2vw;
+  padding-bottom: var(--card-list-padding-bottom);
+
+  &__item {
+    width: 100%;
+    flex: auto;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+    box-shadow: rgb(0 0 0 / 5%) 0 0.188em 0.313em;
+    transition: 0.2s linear;
+
+    &:hover {
+      box-shadow: rgb(0 0 0 / 10%) 0 1em 1.875em;
+    }
+    > * {
+      box-sizing: border-box;
+      width: 100%;
+      flex: auto;
+    }
+  }
+}

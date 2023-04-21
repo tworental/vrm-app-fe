@@ -1,0 +1,167 @@
+:root {
+  --font-weight-bolder: 500;
+}
+
+// file icons path
+$file-icon-css-path: '~file-icon-vectors/dist/icons';
+
+// colors
+$theme-colors: (
+  'text': #495057,
+  'primary': #2E3192,
+  'secondary': #495057,
+  'error': #FF6767,
+  'success': #7FBD34,
+  'info': #5A80F9,
+  'muted': #74788D,
+  'anchor': #556EE6,
+  'white':#ffffff,
+  'alternative': #939EB9,
+);
+$color-white: #ffffff;
+$color-black: #000000;
+$base-color: #495057;
+$base-color-darken: #3E3F42;
+$error-color: map-get($theme-colors, 'error');
+$success-color: map-get($theme-colors, 'success');
+$primary-color: map-get($theme-colors, 'primary');
+$info-color: map-get($theme-colors, 'info');
+$text-muted-color: #74788D;
+$alt-color: map-get($theme-colors, 'alternative');
+$global-link-color: #556EE6;
+$color-heading: #2C2C2C;
+$auth-color: #556EE6;
+$body-bg: #FBFBFD;
+$global-primary-background: #556EE6;
+$active-bg-color: #F2F5F9;
+$warn-color: lighten($primary-color, 10%);
+$stepper-background-color: #DFE2EA;
+$calendar-primary-color: #aab6f2;
+
+// media
+$wide-mobile-screen: 600px;
+$tablet-screen: 1024px;
+$breakpoint-medium: $tablet-screen;
+
+// radius
+$base-radius: 8px;
+$base-radius-strong: 2.5em;
+
+
+// badge
+$badge-size: 20px;
+$badge-background: #FB4B56;
+$badge-font-size: .75rem;
+$badge-padding-horizontal: .8em;
+
+
+// button
+// $button-default-background: transparent;
+// $button-default-color: inherit;
+// $button-default-hover-background: transparent;
+// $button-default-hover-color: inherit;
+// $button-default-active-background: ;
+// $button-default-active-color: $global-emphasis-color !default;
+$button-default-color: $alt-color;
+$button-primary-background: $primary-color;
+$button-secondary-background: map-get($theme-colors, 'secondary');
+$button-padding-horizontal: 1em;
+
+
+//page header (core-layout-content)
+$core-layout-content-header-icon-background: $alt-color;
+
+
+// card
+$card-oveline-color: rgba(#3E3F42, 50%);
+$card-box-shadow: 0 10px 30px 0 rgba(0,0,0,0.1);
+
+
+// nav
+$navbar-background: #3E3F42;
+$nav-item-padding-vertical: 10px;
+$nav-sublist-item-padding-vertical: 10px;
+$nav-sublist-padding-vertical: 0;
+$nav-sublist-padding-left: 20px;
+// $nav-default-item-color: map-get($theme-colors, 'white');
+// $nav-default-item-hover-color: map-get($theme-colors, 'primary');
+// $nav-default-item-active-color: map-get($theme-colors, 'primary');
+// $navbar-nav-item-color: #ffffff;
+// $navbar-nav-item-hover-color: map-get($theme-colors, 'primary');
+
+$inverse-navbar-background: #494a4d;
+$inverse-nav-parent-icon-color: $color-white;
+$inverse-nav-default-item-color: $color-white;
+$inverse-nav-default-item-hover-color: $info-color;
+$inverse-nav-default-item-active-color: $info-color;
+
+
+// alert
+$alert-margin-vertical: 0;
+$alert-padding: 12px;
+$alert-padding-right: 30px;
+$alert-color: $color-white;
+$alert-primary-background: $info-color;
+$alert-primary-color: $color-white;
+$alert-success-background: $success-color;
+$alert-success-color: $color-white;
+$alert-warning-background: lighten($primary-color, 30%);
+$alert-warning-color: $base-color-darken;
+$alert-danger-background: $error-color;
+$alert-danger-color: $color-white;
+
+
+// notification
+$notification-width: 420px;
+// $notification-message-primary-color: $info-color;
+// $notification-message-success-color: $success-color;
+// $notification-message-warning-color: $primary-color;
+// $notification-message-danger-color: $error-color;
+
+
+// close
+$close-color: $base-color;
+
+
+// dropdown
+$dropdown-background: $color-white;
+$dropdown-nav-item-color: $base-color-darken;
+$dropdown-min-width: 184px;
+$dropdown-nav-item-color: $base-color-darken;
+$dropdown-nav-item-hover-color: $primary-color;
+
+
+// offcanvas
+$offcanvas-bar-width-m: 600px;
+$offcanvas-bar-width: 100%;
+$offcanvas-overlay-background: rgba($base-color-darken, 0.6);
+$offcanvas-bar-background: $color-white;
+$offcanvas-close-position: 24px;
+$offcanvas-title-size: 1.15rem;
+$offcanvas-title-line-height: 24px;
+$offcanvas-bar-padding-horizontal: 0;
+$offcanvas-bar-padding-horizontal-m: 0;
+$offcanvas-bar-padding-vertical: 0;
+$offcanvas-bar-padding-vertical-m: 0;
+$offcanvas-bar-color-mode: dark;
+$offcanvas-padding-x: $offcanvas-close-position - 4px;
+$offcanvas-padding-y: 24px;
+
+// progress
+$progress-border-radius: 20px;
+$progress-height: 12px;
+$progress-background: $color-white;
+$progress-bar-background: $primary-color;
+
+// inputs
+$input-background-color: #f4f5f8;
+$input-placeholder-color: #bababa;
+$input-suffix-color: #aaaaaa;
+$input-disabled-color: #f8f8f8;
+
+$nav-menu-background-hover: rgba(242, 245, 249, 0.8);
+
+$table-border-color: #eaecef;
+
+$internal-form-select-image: "data:image/svg+xml,%3Csvg width='24' height='16' viewBox='0 0 24 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 9.24902C11.3105 9.24902 10.75 8.68802 10.75 7.99902C10.75 7.30952 11.3105 6.74902 12 6.74902C12.689 6.74902 13.25 7.30952 13.25 7.99902C13.25 8.68852 12.689 9.24902 12 9.24902ZM12 7.24902C11.5865 7.24902 11.25 7.58552 11.25 7.99902C11.25 8.41252 11.5865 8.74902 12 8.74902C12.4135 8.74902 12.75 8.41252 12.75 7.99902C12.75 7.58552 12.4135 7.24902 12 7.24902Z' fill='%233E3F42'/%3E%3Cpath d='M9.25 5.29203C9.183 5.29203 9.1205 5.26603 9.073 5.21903C9.0255 5.17203 9 5.10903 9 5.04203C9 4.97503 9.026 4.91253 9.073 4.86503L11.4695 2.46852C11.611 2.32702 11.7995 2.24902 12 2.24902C12.2005 2.24902 12.3885 2.32702 12.53 2.46802L14.9265 4.86453C14.974 4.91253 15 4.97553 15 5.04203C15 5.10853 14.974 5.17153 14.927 5.21903C14.88 5.26653 14.817 5.29203 14.75 5.29203C14.683 5.29203 14.6205 5.26603 14.573 5.21903L12.1765 2.82252C12.1295 2.77552 12.067 2.74952 12 2.74952C11.933 2.74952 11.8705 2.77552 11.8235 2.82252L9.427 5.21903C9.3795 5.26603 9.317 5.29203 9.25 5.29203Z' fill='%233E3F42'/%3E%3Cpath d='M12 13.7485C11.7995 13.7485 11.611 13.6705 11.47 13.529L9.0735 11.1325C9.026 11.0855 9 11.023 9 10.956C9 10.889 9.026 10.8265 9.073 10.779C9.12 10.7315 9.183 10.706 9.25 10.706C9.317 10.706 9.3795 10.732 9.427 10.779L11.8235 13.1755C11.8705 13.2225 11.9335 13.2485 12 13.2485C12.067 13.2485 12.1295 13.2225 12.177 13.1755L14.5735 10.779C14.6205 10.732 14.6835 10.706 14.7505 10.706C14.8175 10.706 14.88 10.732 14.9275 10.779C14.975 10.826 15 10.8895 15 10.956C15 11.0225 14.974 11.0855 14.927 11.133L12.5305 13.5295C12.389 13.671 12.2005 13.7485 12 13.7485Z' fill='%233E3F42'/%3E%3C/svg%3E%0A";
+$dark-form-select-image: "data:image/svg+xml,%3Csvg width='24' height='16' viewBox='0 0 24 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 9.24896C11.3105 9.24896 10.75 8.68796 10.75 7.99896C10.75 7.30946 11.3105 6.74896 12 6.74896C12.689 6.74896 13.25 7.30946 13.25 7.99896C13.25 8.68846 12.689 9.24896 12 9.24896ZM12 7.24896C11.5865 7.24896 11.25 7.58546 11.25 7.99896C11.25 8.41246 11.5865 8.74896 12 8.74896C12.4135 8.74896 12.75 8.41246 12.75 7.99896C12.75 7.58546 12.4135 7.24896 12 7.24896Z' fill='white'/%3E%3Cpath d='M9.25 5.29202C9.183 5.29202 9.1205 5.26602 9.073 5.21902C9.0255 5.17202 9 5.10902 9 5.04202C9 4.97502 9.026 4.91252 9.073 4.86502L11.4695 2.46852C11.611 2.32702 11.7995 2.24902 12 2.24902C12.2005 2.24902 12.3885 2.32702 12.53 2.46802L14.9265 4.86452C14.974 4.91252 15 4.97552 15 5.04202C15 5.10852 14.974 5.17152 14.927 5.21902C14.88 5.26652 14.817 5.29202 14.75 5.29202C14.683 5.29202 14.6205 5.26602 14.573 5.21902L12.1765 2.82252C12.1295 2.77552 12.067 2.74952 12 2.74952C11.933 2.74952 11.8705 2.77552 11.8235 2.82252L9.427 5.21902C9.3795 5.26602 9.317 5.29202 9.25 5.29202Z' fill='white'/%3E%3Cpath d='M12 13.7485C11.7995 13.7485 11.611 13.6705 11.47 13.529L9.0735 11.1325C9.026 11.0855 9 11.023 9 10.956C9 10.889 9.026 10.8265 9.073 10.779C9.12 10.7315 9.183 10.706 9.25 10.706C9.317 10.706 9.3795 10.732 9.427 10.779L11.8235 13.1755C11.8705 13.2225 11.9335 13.2485 12 13.2485C12.067 13.2485 12.1295 13.2225 12.177 13.1755L14.5735 10.779C14.6205 10.732 14.6835 10.706 14.7505 10.706C14.8175 10.706 14.88 10.732 14.9275 10.779C14.975 10.826 15 10.8895 15 10.956C15 11.0225 14.974 11.0855 14.927 11.133L12.5305 13.5295C12.389 13.671 12.2005 13.7485 12 13.7485Z' fill='white'/%3E%3C/svg%3E%0A";
